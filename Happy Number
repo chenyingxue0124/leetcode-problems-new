@@ -15,7 +15,7 @@
 ###   hash table / math
 
 def isHappy(n):
-    mem = set() #prevent same digits
+    mem = set() #prevent same digits 如果出现重复了，就一直循环下去不会得到1了
     while n != 1:
         n = sum([int(i) ** 2 for i in str(n)]) #calculate the sum of the squres of its digits
         if n in mem: # means it loops endlessly in a cycle
@@ -23,4 +23,4 @@ def isHappy(n):
         else:
             mem.add(n) #add new n
     else:
-        return True
+        return True #直接得到1的情况
